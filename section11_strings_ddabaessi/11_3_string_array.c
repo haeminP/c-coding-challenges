@@ -25,7 +25,7 @@ int main()
 
     // mythings[0] and temp1 will have the same address:
     // why?
-    // mythings and temp1 are just pointing things, since the contents are the same one!!,
+    // mythings and temp1 are just pointing things, since the contents are the same one,
     // compiler will decide two of them in the same spot
 
     // Meanwhile, yourthings[0] and temp2 are different as they will have different memory space
