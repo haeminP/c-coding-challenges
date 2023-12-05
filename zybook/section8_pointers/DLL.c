@@ -19,14 +19,14 @@ void IntNode_Create(IntNode* thisNode, int dataInit, IntNode* nextLoc, IntNode* 
 
 void IntNode_InsertAfter(IntNode* thisNode, IntNode* newNode) {   
 	newNode->nextNodePtr = thisNode->nextNodePtr;
-	if (thisNode->nextNodePtr != NULL)			// If the new node is adding to the end of the linkedlist
+	if (thisNode->nextNodePtr != NULL)			// If the new node is added to the end of the linkedlist
 		thisNode->nextNodePtr->previousNodePtr = newNode;
 
 	newNode->previousNodePtr = thisNode;
 	thisNode->nextNodePtr = newNode;
 
-	// If the new node is adding to the end of the linkedlist, update the node lastObj
-	if (thisNode->nextNodePtr == NULL)
+	// If the new node is added to the end of the linkedlist, update the node lastObj
+	if (newNode->nextNodePtr == NULL)
 		lastObj = newNode;
 }
 
@@ -50,7 +50,7 @@ void IntNode_Delete(IntNode* thisNode) {
 }
 
 
-void IntNode_Clear()    // Clear the list completely
+void IntNode_Clear();    // Clear the list completely
 
 // Print dataVal
 void IntNode_PrintNodeData(IntNode* thisNode) {
