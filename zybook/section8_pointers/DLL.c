@@ -51,6 +51,8 @@ void IntNode_Delete(IntNode* thisNode) {
 
 
 void IntNode_Clear();    // Clear the list completely
+// use a while loop to go and delete (free) every node
+
 
 // Print dataVal
 void IntNode_PrintNodeData(IntNode* thisNode) {
