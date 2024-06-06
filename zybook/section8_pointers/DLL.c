@@ -19,26 +19,26 @@ void IntNode_Create(IntNode* thisNode, int dataInit, IntNode* nextLoc, IntNode* 
 
 void IntNode_InsertAfter(IntNode* thisNode, IntNode* newNode) {   
 	newNode->nextNodePtr = thisNode->nextNodePtr;
-	if (thisNode->nextNodePtr != NULL)			// If the new node is added to the end of the linkedlist
+	if (thisNode->nextNodePtr != NULL)			// Check if the new node is added to the end of the linked list
 		thisNode->nextNodePtr->previousNodePtr = newNode;
 
 	newNode->previousNodePtr = thisNode;
 	thisNode->nextNodePtr = newNode;
 
-	// If the new node is added to the end of the linkedlist, update the node lastObj
+	// If the new node is added to the end of the linked list, update the node lastObj
 	if (newNode->nextNodePtr == NULL)
 		lastObj = newNode;
 }
 
 void IntNode_InsertBefore(IntNode* thisNode, IntNode* newNode) {   
 	newNode->previousNodePtr = thisNode->previousNodePtr;
-   if(thisNode->previousNodePtr != NULL)    // if the new node is adding to the beginning of the list
+   if(thisNode->previousNodePtr != NULL)    // Check if the new node is added to the beginning of the list
          thisNode->previousNodePtr->nextNodePtr = newNode;
    
    newNode->nextNodePtr = thisNode;
    thisNode->previousNodePtr = newNode;
 
-   // If the new node is added to the beginning of the linkedlist, update the node headOjb
+   // If the new node is added to the beginning of the linked list, update the node headOjb
    if(newNode->previousNodePtr == NULL)
       headObj = newNode;
 }

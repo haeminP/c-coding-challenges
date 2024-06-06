@@ -91,8 +91,7 @@ int IntNode_SumList(IntNode* firstNode)
     currNode = (IntNode*)malloc(sizeof(IntNode));
 
     currNode = firstNode;
-
-
+    
     while(currNode != NULL)
     {
         sum += currNode->dataVal;

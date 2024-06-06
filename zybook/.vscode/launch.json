@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/where/OneDrive/Desktop/ctutorials/zybook/section5_arrays",
-      "program": "c:/Users/where/OneDrive/Desktop/ctutorials/zybook/section5_arrays/build/Debug/outDebug",
+      "cwd": "c:/Users/where/OneDrive/Desktop/CompSci/fall-2023/ctutorials/zybook/section8_pointers",
+      "program": "c:/Users/where/OneDrive/Desktop/CompSci/fall-2023/ctutorials/zybook/section8_pointers/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
