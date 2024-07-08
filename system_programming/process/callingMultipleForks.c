@@ -26,6 +26,5 @@ int main() {
         printf("wait for a child to finish");
     }
     
-
-
+    return 0;
 }
