@@ -16,8 +16,9 @@ int main (int argc, char* argv[]) {
     // in that case, child process becomes a zombie process
 
     if (pid == 0) {
-        // child process
-        execlp("ping", "ping", "-c", "3", "google.com", NULL);  
+        // child process: replaced by ping process
+        execlp("ping", "ping", "-c", "3", "google.com", NULL);
+        printf("THIS SHOULD NOT PRINT ON THE TERMINAL");
     } else {
         // parent process
         wait(NULL); // wait for child process to finish
