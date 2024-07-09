@@ -17,15 +17,29 @@ int main (int argc, char* argv[]) {
 
     if (pid == 0) {
         // child process: replaced by ping process
-        execlp("ping", "ping", "-c", "3", "google.com", NULL);
+        int err = execlp("ping", "ping", "-c", "3", "google.con", NULL);
+
+        if (err == -1){
+            printf("Could not find program to execute!\n");
+            return 2;
+        }
         printf("THIS SHOULD NOT PRINT ON THE TERMINAL");
     } else {
+        int waitStatus;
         // parent process
-        wait(NULL); // wait for child process to finish
+        wait(&waitStatus); // wait for child process to finish
+        if (WIFEXITED(waitStatus)) {
+            int statusCode = WEXITSTATUS(waitStatus);
+            if (statusCode == 0){
+                printf("Success!\n");
+            } else {
+                printf("Failure with status code %d\n", statusCode);
+            }
+        }
         printf("Some post processing goes here!\n");
     }
 
-    printf("Success!");
+
     return 0;
 }
 
