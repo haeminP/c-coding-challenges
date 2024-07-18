@@ -4,7 +4,8 @@
     "stdio.h": "c",
     "simplecar.h": "c",
     "string.h": "c",
-    "vector.h": "c"
+    "vector.h": "c",
+    "unistd.h": "c"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
