@@ -27,19 +27,19 @@ int main() {
         int n, i;
         int arr[10];
         srand(time(NULL));
-        n = rand() % 10 + 1;
+        n = rand() % 10 + 1;    // generate a random number between 1-10 (inclusive)
         printf("Generated: ");
 
         for (i = 0; i < n; i++) {
-            arr[i] = rand() % 11;
+            arr[i] = rand() % 11;   // generate random numbers between 0-10
             printf("%d ", arr[i]);
         }
         printf("\n");
+        
         // send the number of elements in array
         if (write(fd[1], &n, sizeof(int)) < 0) {
             return 4;
         }
-
         printf("Sent %d numbers\n", n);
 
         if (write(fd[1], arr, sizeof(int) * n) < 0) {
