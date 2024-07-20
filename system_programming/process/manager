@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Check if the number of tasks is passed as an argument
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <number_of_tasks>"
+  exit 1
+fi
+
+# Get the current number of tasks
+current_tasks=$1
+
+# Increase the number of tasks by 8
+new_tasks=$((current_tasks + 8))
+
+
+# Check if the number of tasks reaches or exceeds 100
+if [ $new_tasks -ge 100 ]; then
+  echo "from manager: new hiring!"
+  exit 0
+fi
+
+
+# Print the current total after increasing
+echo "from manager: current total is $new_tasks"
+
+# Call the worker with the updated number of tasks
+./worker $new_tasks
