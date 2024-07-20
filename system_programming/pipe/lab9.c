@@ -11,13 +11,16 @@ int main(int argc, char *argv[]) {
     exit(1);
   }
 
+  // creating a pipe
   int pipefd[2];
   if (pipe(pipefd) == -1) {
     perror("pipe");
     exit(1);
   }
 
-  pid_t pid = fork();
+
+
+  int pid = fork();
   if (pid == -1) {
     perror("fork");
     exit(1);
@@ -49,7 +52,7 @@ int main(int argc, char *argv[]) {
       exit(1);
     }
 
-    write(pipefd[1], argv[1], strlen(argv[1])); // write command to child process
+    write(pipefd[1], argv[1], strlen(argv[1])); // send the command to child process
 
     char buffer[1024];
     ssize_t nread;
