@@ -14,7 +14,7 @@ int main() {
 
     int id = fork();
     if (id == 0) {
-        close(fd[0]);   //close right away as it will never read inside of child process
+        close(fd[0]);   //close right away as it will never read in child process
         int x;
         printf("Input a number: ");
         scanf("%d", &x);

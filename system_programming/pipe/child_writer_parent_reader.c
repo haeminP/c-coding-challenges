@@ -19,14 +19,14 @@ int main(int argc, char *argv[]){
 
 void child(int fd[]){
     char message[255] = "Hello from child process\n";
-    close(fd[0]);
+    close(fd[0]); // close the read end
     sleep(5);   // this shows blocking read
     write(fd[1], message, 26);
 }
 
 void parent(int, *fd){
     char ch;
-    close(fd[1]);
+    close(fd[1]);  // close the write end
     printf("Reading data from child...\n");
     for (int = 0; i < 28; i++){
         read(fd[0], &ch, 1);
