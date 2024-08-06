@@ -5,7 +5,7 @@
 #include <time.h>
 
 // 2 processes
-// 1) Child process should generate random numbers and send them to the paretn
+// 1) Child process should generate random numbers and send them to the parent
 // 2) Parent is going to sum all the numbers and print the result
 // Only write from Child process, and only read from Parent process
 
