@@ -17,16 +17,16 @@ int main (int argc, char* argv[]) {
 
     if (pid == 0) {
         // child process: replaced by ping process
-        int err = execlp("ping", "ping", "-c", "3", "google.con", NULL);
+        int err = execlp("ping", "ping", "-c", "3", "google.com", NULL);
 
         if (err == -1){
             printf("Could not find program to execute!\n");
             return 2;
         }
-        printf("THIS SHOULD NOT PRINT ON THE TERMINAL");
+        printf("THIS SHOULD NOT PRINT ON THE TERMINAL"); // child process is replaced by Ping
     } else {
-        int waitStatus;
         // parent process
+        int waitStatus;
         wait(&waitStatus); // wait for child process to finish
         if (WIFEXITED(waitStatus)) {
             int statusCode = WEXITSTATUS(waitStatus);
