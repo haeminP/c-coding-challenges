@@ -28,7 +28,7 @@ int main (int argc, char* argv[]) {
         // parent process
         int waitStatus;
         wait(&waitStatus); // wait for child process to finish
-        if (WIFEXITED(waitStatus)) {
+        if (WIFEXITED(waitStatus)) { // check if the child process exited normally
             int statusCode = WEXITSTATUS(waitStatus);
             if (statusCode == 0){
                 printf("Success!\n");
