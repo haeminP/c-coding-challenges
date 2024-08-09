@@ -12,7 +12,6 @@ void create_child_processes(int process_number, int *sleep_times) {
             if (pid == 0) {
                 // Child process of the original process (2 and 3)
                 process_number = i;
-                // Wait for child processes of 2 or 3 to terminate
 
 
                 for (int j = 2 * process_number; j <= 2 * process_number + 1; j++) {
